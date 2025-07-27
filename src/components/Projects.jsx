@@ -8,7 +8,7 @@ const projects = [
       description: 'MERN stack social media reward platform with admin panel',
       technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
     github: '#',
-      demo: '#',
+      demo: 'https://https-github-com-codechamp12345-has.vercel.app',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop'
     },
     {
@@ -25,7 +25,7 @@ const projects = [
       technologies: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
     github: '#',
       demo: '#',
-      image: 'https://images.unsplash.com/photo-1580915411951-2f54c1530d7e?w=400&h=250&fit=crop'
+      image: 'https://plus.unsplash.com/premium_photo-1702598604444-8ac3b474b86d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     title: 'GST Invoice Generator',

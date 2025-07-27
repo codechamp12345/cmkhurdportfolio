@@ -3,8 +3,8 @@ import { FiGithub, FiLinkedin, FiTwitter, FiInstagram, FiHeart } from 'react-ico
 
 const Footer = () => {
   const socialLinks = [
-    { icon: FiGithub, url: '#', label: 'GitHub' },
-    { icon: FiLinkedin, url: '#', label: 'LinkedIn' },
+    { icon: FiGithub, url: 'https://github.com', label: 'GitHub' },
+    { icon: FiLinkedin, url: 'www.linkedin.com/in/cmkhurd', label: 'LinkedIn' },
     { icon: FiTwitter, url: '#', label: 'Twitter' },
     { icon: FiInstagram, url: '#', label: 'Instagram' }
   ];

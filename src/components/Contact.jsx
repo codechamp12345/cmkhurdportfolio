@@ -34,19 +34,19 @@ const Contact = () => {
     {
       icon: FiMail,
       label: 'Email',
-      value: 'your.email@example.com',
-      link: 'mailto:your.email@example.com'
+      value: 'cmkhurd@gmail.com',
+      link: 'mailto:cmkhurd@gmail.com'
     },
     {
       icon: FiPhone,
       label: 'Phone',
-      value: '+1 234 567 890',
-      link: 'tel:+1234567890'
+      value: '+91 9588462565',
+      link: 'tel:+919588462565'
     },
     {
       icon: FiMapPin,
       label: 'Location',
-      value: 'Maharashtra, India',
+      value: 'Ratnagiri, Maharashtra, India',
       link: null
     }
   ];
