@@ -79,7 +79,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                I’m a <strong style={{ color: '#667eea' }}>Third-year Computer Engineering student</strong> at Dr. Babasaheb Ambedkar Technological University, passionate about <strong>web development, UI/UX design,</strong> and <strong>machine learning</strong> projects.
+                I’m a <strong style={{ color: '#667eea' }}>Final-year Computer Engineering student</strong> at Gharda Institute of Technology, passionate about <strong>web development, UI/UX design,</strong> and <strong>machine learning</strong> projects.
               </motion.p>
 
               <motion.p
