@@ -6,7 +6,7 @@ const About = () => {
     {
       icon: FiUser,
       title: 'Student',
-      description: 'Third-year Computer Engineering student at Dr. Babasaheb Ambedkar Technological University.'
+      description: 'Final-year Computer Engineering student at Gharda Institute of Technology.'
     },
     {
       icon: FiCode,
