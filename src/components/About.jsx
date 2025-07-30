@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 import { FiUser, FiCode, FiHeart, FiTarget } from 'react-icons/fi';
+import Photo from "./PHOTO.jpg";
+
+
 
 const About = () => {
   const highlights = [
@@ -26,8 +29,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-padding">
-      <div className="container">
+    <section id="about" className="section-padding py-20 bg-white">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -35,16 +38,12 @@ const About = () => {
           viewport={{ once: true }}
         >
           <motion.h2
-            className="section-title gradient-text"
+            className="text-center text-4xl font-bold mb-10 gradient-text"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
             style={{
-              textAlign: 'center',
-              fontSize: '2.5rem',
-              fontWeight: '700',
-              marginBottom: '2rem',
               background: 'linear-gradient(to right, #667eea, #764ba2)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
@@ -53,14 +52,7 @@ const About = () => {
             About Me
           </motion.h2>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '3rem',
-            alignItems: 'center',
-            maxWidth: '1200px',
-            margin: '0 auto'
-          }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
             {/* Text & Highlights */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -69,26 +61,16 @@ const About = () => {
               viewport={{ once: true }}
             >
               <motion.p
-                style={{
-                  fontSize: '1.125rem',
-                  lineHeight: '1.8',
-                  marginBottom: '1.5rem',
-                  color: '#4b5563'
-                }}
+                className="text-gray-800 text-lg leading-7 mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                I’m a <strong style={{ color: '#667eea' }}>Final-year Computer Engineering student</strong> at Gharda Institute of Technology, passionate about <strong>web development, UI/UX design,</strong> and <strong>machine learning</strong> projects.
+                I’m a <strong className="text-indigo-500">Final-year Computer Engineering student</strong> at Gharda Institute of Technology, passionate about <strong>web development, UI/UX design,</strong> and <strong>machine learning</strong> projects.
               </motion.p>
 
               <motion.p
-                style={{
-                  fontSize: '1.125rem',
-                  lineHeight: '1.8',
-                  marginBottom: '2rem',
-                  color: '#4b5563'
-                }}
+                className="text-gray-800 text-lg leading-7 mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
@@ -96,13 +78,8 @@ const About = () => {
                 I combine creativity with technical expertise to build innovative solutions. My focus is on developing efficient, user-friendly applications while continuously learning and exploring emerging technologies.
               </motion.p>
 
-              {/* Highlight Cards */}
               <motion.div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                  gap: '1.5rem'
-                }}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
@@ -110,37 +87,17 @@ const About = () => {
                 {highlights.map((highlight, index) => (
                   <motion.div
                     key={highlight.title}
-                    style={{
-                      background: '#fff',
-                      borderRadius: '1rem',
-                      boxShadow: '0 10px 25px rgba(0, 0, 0, 0.05)',
-                      padding: '1.5rem',
-                      textAlign: 'center'
-                    }}
+                    className="bg-white rounded-xl p-4 text-center shadow-md hover:shadow-xl transition-all duration-300"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.7 + index * 0.1 }}
                     whileHover={{ scale: 1.05, y: -5 }}
                   >
-                    <div style={{
-                      fontSize: '2rem',
-                      color: '#667eea',
-                      marginBottom: '0.5rem'
-                    }}>
+                    <div className="text-indigo-500 text-3xl mb-2">
                       <highlight.icon />
                     </div>
-                    <h4 style={{
-                      fontSize: '1.125rem',
-                      fontWeight: '600',
-                      color: '#333'
-                    }}>
-                      {highlight.title}
-                    </h4>
-                    <p style={{
-                      fontSize: '0.95rem',
-                      color: '#6b7280',
-                      marginTop: '0.5rem'
-                    }}>
+                    <h4 className="text-lg font-semibold text-gray-900">{highlight.title}</h4>
+                    <p className="text-sm text-gray-600 mt-1">
                       {highlight.description}
                     </p>
                   </motion.div>
@@ -148,84 +105,29 @@ const About = () => {
               </motion.div>
             </motion.div>
 
-            {/* Animated Logo */}
+            {/* Photo Card */}
             <motion.div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                position: 'relative'
-              }}
+              className="relative w-full md:w-[400px] h-[500px] rounded-[30px] overflow-hidden group"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
+              viewport={{ once: true }}
             >
-              <motion.div
-                style={{
-                  width: '300px',
-                  height: '300px',
-                  borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #667eea, #764ba2)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '2.5rem',
-                  fontWeight: 'bold',
-                  color: 'white',
-                  position: 'relative'
-                }}
-                animate={{
-                  rotate: [0, 360],
-                  scale: [1, 1.05, 1]
-                }}
-                transition={{
-                  rotate: { duration: 20, repeat: Infinity, ease: 'linear' },
-                  scale: { duration: 3, repeat: Infinity, ease: 'easeInOut' }
-                }}
-              >
-                CMK
-
-                {/* Animated rings */}
-                <motion.div
-                  style={{
-                    position: 'absolute',
-                    top: '-10px',
-                    left: '-10px',
-                    right: '-10px',
-                    bottom: '-10px',
-                    border: '2px solid rgba(255, 255, 255, 0.3)',
-                    borderRadius: '50%'
-                  }}
-                  animate={{
-                    rotate: [0, -360],
-                    scale: [1, 1.1, 1]
-                  }}
-                  transition={{
-                    rotate: { duration: 15, repeat: Infinity, ease: 'linear' },
-                    scale: { duration: 4, repeat: Infinity, ease: 'easeInOut' }
-                  }}
-                />
-
-                <motion.div
-                  style={{
-                    position: 'absolute',
-                    top: '-20px',
-                    left: '-20px',
-                    right: '-20px',
-                    bottom: '-20px',
-                    border: '2px solid rgba(255, 255, 255, 0.15)',
-                    borderRadius: '50%'
-                  }}
-                  animate={{
-                    rotate: [0, 360],
-                    scale: [1, 1.2, 1]
-                  }}
-                  transition={{
-                    rotate: { duration: 25, repeat: Infinity, ease: 'linear' },
-                    scale: { duration: 5, repeat: Infinity, ease: 'easeInOut' }
-                  }}
-                />
-              </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 opacity-20 mix-blend-overlay rounded-[30px] transition-all duration-500 group-hover:opacity-30"></div>
+              <img 
+                src={Photo}
+                alt="Profile"
+                className="w-full h-full object-cover rounded-[30px] transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/40 rounded-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 className="text-2xl font-bold mb-2">Chaitanya Khurd</h3>
+                <p className="text-gray-200">Full Stack Developer</p>
+              </div>
+              <div className="absolute inset-0 border-2 border-gradient rounded-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 border-2 border-indigo-500 rounded-[30px] opacity-0"></div>
+                <div className="absolute inset-0 border-2 border-purple-600 rounded-[30px] opacity-0"></div>
+              </div>
             </motion.div>
           </div>
         </motion.div>

@@ -1,78 +1,67 @@
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import { Link } from 'react-scroll';
-import { FiDownload, FiMail, FiArrowDown } from 'react-icons/fi';
+import { FiArrowDown } from 'react-icons/fi';
 
 const Hero = () => {
   return (
-    <section id="hero" style={{
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '5rem 1rem',
-      position: 'relative',
-      overflow: 'hidden',
-      background: '#f9f9fc'
-    }}>
-      {/* Background Glow */}
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05))',
-        zIndex: -1
-      }} />
+    <section id="hero" className="relative h-screen flex items-center justify-center bg-white overflow-hidden">
+      {/* Background Elements */}
+      <motion.div
+        className="absolute inset-0"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'100%25\' height=\'100%25\' viewBox=\'0 0 1440 320\'%3E%3Cpath fill=\'%23f3f4f6\' fill-opacity=\'1\' d=\'M0,96L48,117.3C96,139,192,181,288,197.3C384,213,480,171,576,160C672,149,768,171,864,186.7C960,203,1056,213,1152,208C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z\'%3E%3C/path%3E%3C/svg%3E')] opacity-5" />
+      </motion.div>
 
-      <div className="container">
+      {/* Floating Elements */}
+      <motion.div
+        className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-gradient-to-r from-indigo-100 to-purple-200 opacity-10"
+        initial={{ scale: 0.5 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+      />
+      <motion.div
+        className="absolute -bottom-20 -left-20 w-48 h-48 rounded-full bg-gradient-to-r from-purple-200 to-pink-200 opacity-10"
+        initial={{ scale: 0.5 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
+      />
+
+      {/* Main Content */}
+      <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          style={{ textAlign: 'center' }}
+          className="text-center px-4"
         >
           <motion.h2
-            className="gradient-text-secondary"
-            style={{
-              fontWeight: '500',
-              marginBottom: '1rem',
-              fontSize: '1.25rem'
-            }}
+            className="text-2xl font-semibold mb-2 text-gray-700"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
             Hello, I'm
           </motion.h2>
 
           <motion.h1
-            className="gradient-text"
-            style={{
-              fontSize: 'clamp(2.5rem, 6vw, 4rem)',
-              fontWeight: '700',
-              marginBottom: '1.5rem',
-              lineHeight: '1.2',
-              background: 'linear-gradient(to right, #667eea, #764ba2)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
-            }}
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-transparent bg-clip-text"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
             Chaitanya Mahendra Khurd
           </motion.h1>
 
           <motion.div
-            style={{
-              fontSize: 'clamp(1.25rem, 3vw, 1.75rem)',
-              marginBottom: '2rem',
-              minHeight: '2rem'
-            }}
+            className="text-2xl md:text-3xl font-semibold mb-4"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
             <Typewriter
@@ -84,150 +73,60 @@ const Hero = () => {
                 ],
                 autoStart: true,
                 loop: true,
-                wrapperClassName: 'gradient-text-accent',
-                cursorClassName: 'gradient-text-accent'
+                wrapperClassName: 'bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 text-transparent bg-clip-text',
+                cursorClassName: 'text-indigo-500'
               }}
             />
           </motion.div>
 
           <motion.p
-            style={{
-              color: 'rgb(75 85 99)',
-              maxWidth: '42rem',
-              margin: '0 auto 2rem',
-              lineHeight: '1.75',
-              fontSize: '1.125rem'
-            }}
+            className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            Crafting digital experiences through code and design, specializing in full-stack development
-            and creating user-centric solutions.
+            Passionate Full Stack Developer specializing in the MERN stack, I build responsive and intuitive web applications that deliver exceptional user experiences.
           </motion.p>
 
-          {/* CTA Buttons */}
           <motion.div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '1rem',
-              flexWrap: 'wrap',
-              marginBottom: '3rem'
-            }}
+            className="flex flex-col sm:flex-row gap-5 justify-center"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
           >
-            {/* Contact Button */}
-            <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
-              <Link
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  background: 'linear-gradient(to right, #667eea, #764ba2)',
-                  color: 'white',
-                  padding: '0.75rem 1.5rem',
-                  borderRadius: '999px',
-                  fontWeight: '600',
-                  fontSize: '1rem',
-                  textDecoration: 'none'
-                }}
-              >
-                <FiMail />
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 rounded-lg font-semibold text-lg text-white bg-gradient-to-r from-indigo-500 to-purple-600 shadow-lg hover:shadow-xl transition-all"
+            >
+              <Link to="projects" smooth duration={500}>
+                View Projects
+              </Link>
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 rounded-lg font-semibold text-lg text-white bg-gradient-to-r from-pink-500 to-red-500 shadow-lg hover:shadow-xl transition-all"
+            >
+              <Link to="contact" smooth duration={500}>
                 Contact Me
               </Link>
-            </motion.div>
-
-            {/* Download CV Button */}
-            <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
-              <a
-                href="/resume.pdf"
-                download
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  background: 'linear-gradient(to right, #667eea, #764ba2)',
-                  color: 'white',
-                  padding: '0.75rem 1.5rem',
-                  borderRadius: '999px',
-                  fontWeight: '600',
-                  fontSize: '1rem',
-                  textDecoration: 'none'
-                }}
-              >
-                <FiDownload />
-                Download CV
-              </a>
-            </motion.div>
+            </motion.button>
           </motion.div>
 
-          {/* Scroll Down Animation */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            className="mt-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: '0.5rem',
-              color: 'rgb(75 85 99)',
-              fontSize: '0.875rem'
-            }}
           >
-            <span>Scroll to explore</span>
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <FiArrowDown size={16} />
-            </motion.div>
+            <Link to="about" smooth duration={500}>
+              <FiArrowDown className="text-3xl text-gray-500 hover:text-indigo-500 transition" />
+            </Link>
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Floating Decorative Circles */}
-      <motion.div
-        style={{
-          position: 'absolute',
-          top: '20%',
-          left: '10%',
-          width: '100px',
-          height: '100px',
-          background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))',
-          borderRadius: '50%',
-          zIndex: -1
-        }}
-      />
-      <motion.div
-        style={{
-          position: 'absolute',
-          bottom: '20%',
-          right: '10%',
-          width: '150px',
-          height: '150px',
-          background: 'linear-gradient(135deg, rgba(240, 147, 251, 0.1), rgba(245, 87, 108, 0.1))',
-          borderRadius: '50%',
-          zIndex: -1
-        }}
-        animate={{
-          scale: [1, 1.1, 1],
-          rotate: [0, 180, 360]
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: 'easeInOut'
-        }}
-      />
     </section>
   );
 };
