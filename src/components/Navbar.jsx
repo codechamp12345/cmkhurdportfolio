@@ -66,7 +66,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                   to={item.to}
                   smooth={true}
                   duration={500}
-                  className="text-sm md:text-base font-medium px-3 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent hover:from-pink-500 hover:to-yellow-500 transition-all duration-300"
+                  className="text-sm md:text-base font-medium px-3 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent hover:from-pink-500 hover:to-yellow-500 transition-all duration-300 cursor-pointer"
                 >
                   {item.title}
                 </Link>
@@ -83,7 +83,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             <motion.button
               whileTap={{ rotate: 360 }}
               onClick={toggleDarkMode}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
+              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300 cursor-pointer"
             >
               {darkMode ? (
                 <FiSun className="w-6 h-6 text-yellow-400" />
@@ -98,7 +98,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             <motion.button
               whileTap={{ rotate: 360 }}
               onClick={toggleDarkMode}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
+              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300 cursor-pointer"
             >
               {darkMode ? (
                 <FiSun className="w-6 h-6 text-yellow-400" />
@@ -109,7 +109,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 cursor-pointer"
             >
               {isOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
             </button>
@@ -139,7 +139,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                       smooth={true}
                       duration={500}
                       onClick={() => setIsOpen(false)}
-                      className="block text-2xl font-semibold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent hover:from-pink-500 hover:to-yellow-500 transition-all duration-300"
+                      className="block text-2xl font-semibold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent hover:from-pink-500 hover:to-yellow-500 transition-all duration-300 cursor-pointer"
                     >
                       {item.title}
                     </Link>
@@ -159,7 +159,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                 >
                   <button
                     onClick={toggleDarkMode}
-                    className="flex items-center gap-2 text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-purple-400 transition-colors duration-300"
+                    className="flex items-center gap-2 text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-purple-400 transition-colors duration-300 cursor-pointer"
                   >
                     <FiSun className="w-6 h-6 text-yellow-400" />
                     {darkMode ? 'Light Mode' : 'Dark Mode'}

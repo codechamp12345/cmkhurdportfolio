@@ -8,7 +8,7 @@ const experiences = [
     company: 'Gadre Infotech Pvt. Ltd.',
       period: 'Dec 2024',
       location: 'Remote',
-    description: 'UI/UX Design for MXQ Questions website',
+    description: 'UI/UX Design for MCQ Questions website & Website Devvlopment',
       technologies: ['UI/UX Design', 'Web Development', 'Frontend']
   },
   {

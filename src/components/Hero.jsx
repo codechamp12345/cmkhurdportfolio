@@ -97,21 +97,31 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-lg font-semibold text-lg text-white bg-gradient-to-r from-indigo-500 to-purple-600 shadow-lg hover:shadow-xl transition-all"
+              className="px-8 py-3 rounded-lg font-semibold text-lg text-white bg-gradient-to-r from-indigo-500 to-purple-600 shadow-lg hover:shadow-xl transition-all cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#projects')?.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
             >
-              <Link to="projects" smooth duration={500}>
-                View Projects
-              </Link>
+              <span className="cursor-pointer">View Projects</span>
             </motion.button>
 
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-lg font-semibold text-lg text-white bg-gradient-to-r from-pink-500 to-red-500 shadow-lg hover:shadow-xl transition-all"
+              className="px-8 py-3 rounded-lg font-semibold text-lg text-white bg-gradient-to-r from-pink-500 to-red-500 shadow-lg hover:shadow-xl transition-all cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#contact')?.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
             >
-              <Link to="contact" smooth duration={500}>
-                Contact Me
-              </Link>
+              <span className="cursor-pointer">Contact Me</span>
             </motion.button>
           </motion.div>
 

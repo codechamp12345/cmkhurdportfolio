@@ -32,6 +32,17 @@ function App() {
   }, [])
 
   useEffect(() => {
+    // Enable smooth scrolling with hardware acceleration
+    document.documentElement.style.scrollBehavior = 'smooth'
+    document.documentElement.style.willChange = 'scroll-position'
+    
+    // Optimize touch handling
+    document.documentElement.style.touchAction = 'pan-y'
+    document.documentElement.style.overscrollBehavior = 'contain'
+    
+    // Prevent scroll chaining
+    document.documentElement.style.scrollPadding = '20px'
+    
     // Hide horizontal scrollbars but allow vertical scrolling
     document.documentElement.style.overflowX = 'hidden'
     document.documentElement.style.msOverflowStyle = 'none'
@@ -51,12 +62,19 @@ function App() {
       }
     }
 
-    window.addEventListener('wheel', handleWheel, { passive: false })
-    window.addEventListener('touchmove', handleTouchMove, { passive: false })
+    // Add event listeners with passive option for better performance
+    document.addEventListener('wheel', handleWheel, { passive: true })
+    document.addEventListener('touchmove', handleTouchMove, { passive: true })
 
+    // Cleanup
     return () => {
-      window.removeEventListener('wheel', handleWheel)
-      window.removeEventListener('touchmove', handleTouchMove)
+      document.removeEventListener('wheel', handleWheel)
+      document.removeEventListener('touchmove', handleTouchMove)
+      document.documentElement.style.scrollBehavior = ''
+      document.documentElement.style.willChange = ''
+      document.documentElement.style.touchAction = ''
+      document.documentElement.style.overscrollBehavior = ''
+      document.documentElement.style.scrollPadding = ''
       document.documentElement.style.overflowX = ''
       document.documentElement.style.msOverflowStyle = ''
       document.documentElement.style.scrollbarWidth = ''
